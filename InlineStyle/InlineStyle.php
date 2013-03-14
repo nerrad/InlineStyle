@@ -1,5 +1,5 @@
 <?php
-namespace InlineStyle;
+//namespace InlineStyle;
 
 /*
  * InlineStyle MIT License
@@ -26,8 +26,8 @@ namespace InlineStyle;
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-use Symfony\Component\CssSelector\CssSelector;
-use Symfony\Component\CssSelector\Exception\ParseException;
+//use Symfony\Component\CssSelector\CssSelector;
+//use Symfony\Component\CssSelector\Exception\ParseException;
 
 /**
  * Parses a html file and applies all embedded and external stylesheets inline
@@ -76,7 +76,7 @@ class InlineStyle
      */
     public function loadHTML($html)
     {
-        $this->_dom = new \DOMDocument();
+        $this->_dom = new DOMDocument();
         $this->_dom->formatOutput = true;
 
         // strip illegal XML UTF-8 chars
@@ -84,7 +84,7 @@ class InlineStyle
         $html = preg_replace('/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]+/u', '', $html); // 00-09, 11-31, 127
 
         $this->_dom->loadHTML($html);
-        $this->_dom_xpath = new \DOMXPath($this->_dom);
+        $this->_dom_xpath = new DOMXPath($this->_dom);
     }
 
     /**
